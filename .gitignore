@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+*.sqlite3
+
+# Virtual Environment
+venv/
+
+# Environment variables
+.env
+
+# VSCode
+.vscode/
+
+# Static build
+staticfiles/
+
+# Node
+node_modules/
+
+# Angular
+dist/
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
