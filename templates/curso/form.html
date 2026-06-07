@@ -1,0 +1,33 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+
+<h2 class="mb-4">
+
+    Cadastro de Curso
+
+</h2>
+
+<form method="POST">
+
+    {% csrf_token %}
+
+    {{ form.as_p }}
+
+    <button
+        type="submit"
+        class="btn btn-success"
+    >
+        Salvar
+    </button>
+
+    <a
+        href="{% url 'lista_cursos' %}"
+        class="btn btn-secondary"
+    >
+        Cancelar
+    </a>
+
+</form>
+
+{% endblock %}

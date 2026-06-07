@@ -1,0 +1,95 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+
+    <h2>
+        Cursos
+    </h2>
+
+    <div>
+
+        <a
+            href="{% url 'home' %}"
+            class="btn btn-secondary"
+        >
+            Home
+        </a>
+
+        <a
+            href="{% url 'criar_curso' %}"
+            class="btn btn-success"
+        >
+            Novo Curso
+        </a>
+
+    </div>
+
+</div>
+
+<table class="table table-striped table-hover">
+
+    <thead>
+
+        <tr>
+
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Ações</th>
+
+        </tr>
+
+    </thead>
+
+    <tbody>
+
+        {% for curso in cursos %}
+
+        <tr>
+
+            <td>
+                {{ curso.id }}
+            </td>
+
+            <td>
+                {{ curso.nome }}
+            </td>
+
+            <td>
+
+                <a
+                    href="{% url 'editar_curso' curso.id %}"
+                    class="btn btn-warning btn-sm"
+                >
+                    Editar
+                </a>
+
+                <a
+                    href="{% url 'excluir_curso' curso.id %}"
+                    class="btn btn-danger btn-sm"
+                >
+                    Excluir
+                </a>
+
+            </td>
+
+        </tr>
+
+        {% empty %}
+
+        <tr>
+
+            <td colspan="3">
+                Nenhum curso cadastrado.
+            </td>
+
+        </tr>
+
+        {% endfor %}
+
+    </tbody>
+
+</table>
+
+{% endblock %}

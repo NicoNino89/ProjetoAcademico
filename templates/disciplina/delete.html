@@ -1,0 +1,41 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+
+<h2 class="mb-4">
+    Excluir Disciplina
+</h2>
+
+<p>
+
+    Tem certeza que deseja excluir a disciplina
+
+    <strong>
+        {{ disciplina.nome }}
+    </strong>
+
+    ?
+
+</p>
+
+<form method="post">
+
+    {% csrf_token %}
+
+    <button
+        type="submit"
+        class="btn btn-danger"
+    >
+        Confirmar Exclusão
+    </button>
+
+    <a
+        href="{% url 'lista_disciplinas' %}"
+        class="btn btn-secondary"
+    >
+        Cancelar
+    </a>
+
+</form>
+
+{% endblock %}

@@ -1,0 +1,61 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+
+<div class="row">
+
+    <div class="col-md-6 offset-md-3">
+
+        <div class="card shadow-sm">
+
+            <div class="card-header bg-danger text-white">
+
+                <h3>
+                    Excluir Pessoa
+                </h3>
+
+            </div>
+
+            <div class="card-body">
+
+                <p>
+
+                    Tem certeza que deseja excluir a pessoa:
+
+                    <strong>
+                        {{ pessoa.nome }}
+                    </strong>
+
+                    ?
+
+                </p>
+
+                <form method="post">
+
+                    {% csrf_token %}
+
+                    <button
+                        type="submit"
+                        class="btn btn-danger"
+                    >
+                        Confirmar Exclusão
+                    </button>
+
+                    <a
+                        href="{% url 'lista_pessoas' %}"
+                        class="btn btn-secondary"
+                    >
+                        Cancelar
+                    </a>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

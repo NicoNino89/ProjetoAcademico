@@ -1,0 +1,166 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+
+<div class="p-4 mb-4 bg-light rounded-3">
+
+    <div class="container-fluid py-3">
+
+        <h1 class="display-5 fw-bold">
+            Sistema Acadêmico
+        </h1>
+
+        <p class="col-md-8 fs-5">
+
+            Bem-vindo ao portal acadêmico.
+
+        </p>
+
+    </div>
+
+</div>
+
+<div class="row">
+
+    <div class="col-md-3 mb-3">
+
+        <div class="card shadow-sm">
+
+            <div class="card-body">
+
+                <h5 class="card-title">
+                    Pessoas
+                </h5>
+
+                <p class="card-text">
+                    Gerenciamento de pessoas.
+                </p>
+
+                <a
+                    href="{% url 'lista_pessoas' %}"
+                    class="btn btn-primary"
+                >
+                    Acessar
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-3 mb-3">
+
+        <div class="card shadow-sm">
+
+            <div class="card-body">
+
+                <h5 class="card-title">
+                    Cursos
+                </h5>
+
+                <p class="card-text">
+                    Gerenciamento de cursos.
+                </p>
+
+                <a
+                    href="{% url 'lista_cursos' %}"
+                    class="btn btn-primary"
+                >
+                    Acessar
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-3 mb-3">
+
+        <div class="card shadow-sm">
+
+            <div class="card-body">
+
+                <h5 class="card-title">
+                    Alunos
+                </h5>
+
+                <p class="card-text">
+                    Gerenciamento de alunos.
+                </p>
+
+                <a
+                    href="#"
+                    class="btn btn-primary"
+                >
+                    Acessar
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-3 mb-3">
+
+        <div class="card shadow-sm">
+
+            <div class="card-body">
+
+                <h5 class="card-title">
+                    Professores
+                </h5>
+
+                <p class="card-text">
+                    Gerenciamento de professores.
+                </p>
+
+                <a
+                    href="{% url 'lista_professores' %}"
+                    class="btn btn-primary"
+                >
+                    Acessar
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="row">
+
+    <div class="col-md-3 mb-3">
+
+        <div class="card shadow-sm">
+
+            <div class="card-body">
+
+                <h5 class="card-title">
+                    Disciplinas
+                </h5>
+
+                <p class="card-text">
+                    Gerenciamento de disciplinas.
+                </p>
+
+                <a
+                    href="{% url 'lista_disciplinas' %}"
+                    class="btn btn-primary"
+                >
+                    Acessar
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

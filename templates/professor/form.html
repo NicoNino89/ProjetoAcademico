@@ -1,0 +1,61 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+
+<div class="row">
+
+    <div class="col-md-8 offset-md-2">
+
+        <div class="card shadow-sm">
+
+            <div class="card-header">
+
+                <h3>
+
+                    {% if form.instance.id %}
+
+                        Editar Professor
+
+                    {% else %}
+
+                        Novo Professor
+
+                    {% endif %}
+
+                </h3>
+
+            </div>
+
+            <div class="card-body">
+
+                <form method="post">
+
+                    {% csrf_token %}
+
+                    {{ form.as_p }}
+
+                    <button
+                        type="submit"
+                        class="btn btn-success"
+                    >
+                        Salvar
+                    </button>
+
+                    <a
+                        href="{% url 'lista_professores' %}"
+                        class="btn btn-secondary"
+                    >
+                        Cancelar
+                    </a>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,103 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+
+<div class="d-flex justify-content-between align-items-center mb-3">
+
+    <h2>
+        Professores
+    </h2>
+
+    <div>
+
+        <a
+            href="{% url 'home' %}"
+            class="btn btn-secondary"
+        >
+            Home
+        </a>
+
+        <a
+            href="{% url 'criar_professor' %}"
+            class="btn btn-primary"
+        >
+            Novo Professor
+        </a>
+
+    </div>
+
+</div>
+
+<table class="table table-striped">
+
+    <thead>
+
+        <tr>
+
+            <th>
+                Pessoa
+            </th>
+
+            <th>
+                Especialidade
+            </th>
+
+            <th>
+                Ações
+            </th>
+
+        </tr>
+
+    </thead>
+
+    <tbody>
+
+        {% for professor in professores %}
+
+        <tr>
+
+            <td>
+                {{ professor.pessoa.nome }}
+            </td>
+
+            <td>
+                {{ professor.especialidade }}
+            </td>
+
+            <td>
+
+                <a
+                    href="{% url 'editar_professor' professor.id %}"
+                    class="btn btn-warning btn-sm"
+                >
+                    Editar
+                </a>
+
+                <a
+                    href="{% url 'excluir_professor' professor.id %}"
+                    class="btn btn-danger btn-sm"
+                >
+                    Excluir
+                </a>
+
+            </td>
+
+        </tr>
+
+        {% empty %}
+
+        <tr>
+
+            <td colspan="3">
+                Nenhum professor cadastrado.
+            </td>
+
+        </tr>
+
+        {% endfor %}
+
+    </tbody>
+
+</table>
+
+{% endblock %}
